@@ -4,11 +4,11 @@
 
 void main() {
     char title[101];
-    int type, raiting, genre, streaming;
+    int type, raiting, genre, provider;
     // [TYPE]       => (1 filme, 2 série, 3 documentário)
     // [RAITING]    => (0 livre, 10 10+, 18 18+)
     // [GENRE]      => (1 ação, 2 comédia, 3 drama, 4 suspense)
-    // [STREAMING]  => (1 Netflix, 2 Amazon Prime, 3 Disney+, 4 HBO Max)
+    // [PROVIDER]  => (1 Netflix, 2 Amazon Prime, 3 Disney+, 4 HBO Max)
 
     printf(" +----------------------------------------------------+-------------------+---------+-----------+------------------+\n");
     printf("<| Título                                             | Tipo              | Censura | Categoria | Fornecedor       |>\n");
@@ -62,9 +62,9 @@ void main() {
     printf(" +-----------------------------------------------------------------------+\n");
     printf("<| Fornecedor (1 - Netflix, 2 - Amazon Prime, 3 - Disney+, 4 - HBO Max): |>\n");
     printf(" +-----------------------------------------------------------------------+\n");
-    scanf("%d", &streaming);
+    scanf("%d", &provider);
 
-    if (!(streaming == 1 || streaming == 2 || streaming == 3 || streaming == 4)) {
+    if (!(provider == 1 || provider == 2 || provider == 3 || provider == 4)) {
         validationError("1, 2, 3, 4");
         return ;
     }
@@ -72,25 +72,25 @@ void main() {
     
     if(type == 1) {
         if (genre == 1) {
-            if (streaming == 1) {
+            if (provider == 1) {
                 if (raiting == 18) {
                     // "Vingadores: Ultimato", "1", "18", "1", "1 (Netflix)"
                 } else {
                     availabilityError();
                 }
-            } else if (streaming == 3) {
+            } else if (provider == 3) {
                 // "O Rei Leão", "1", "0", "1", "3 (Disney+)"
             } else {
                 availabilityError();
             }
         } else if (genre == 3) {
-            if (streaming == 2) {
+            if (provider == 2) {
                 if (raiting == 10 || raiting == 18) {
                     // "Titanic", "1", "10", "3", "2 (Amazon Prime)"
                 } else {
                     availabilityError();
                 }
-            } else if (streaming == 3) {
+            } else if (provider == 3) {
                 // "O Menino que Descobriu o Vento", "1", "0", "3", "3 (Disney+)"
             } else {
                 availabilityError();
@@ -100,7 +100,7 @@ void main() {
         }
     } else if (type == 2) {
         if (genre == 1) {
-            if (streaming == 1) {
+            if (provider == 1) {
                 if (raiting == 18) {
                     // "Stranger Things", "2", "10", "1", "1 (Netflix)"
                     // "La Casa de Papel", "2", "18", "1", "1 (Netflix)"
@@ -114,13 +114,13 @@ void main() {
                 availabilityError();
             }
         } else if (genre == 2) {
-            if (streaming == 1) {
+            if (provider == 1) {
                 if (raiting == 18) {
                     // "Breaking Bad", "2", "18", "2", "1 (Netflix)"
                 } else {
                     availabilityError();
                 }
-            } else if (streaming == 2) {
+            } else if (provider == 2) {
                 if (raiting == 10 || raiting == 18) {
                     // "Friends", "2", "10", "2", "2 (Amazon Prime)"
                 } else {
@@ -128,7 +128,7 @@ void main() {
                 }
             }
         } else if (genre == 4) {
-            if(streaming == 4 && raiting == 18) {
+            if(provider == 4 && raiting == 18) {
                 // "Chernobyl", "2", "18", "4", "4 (HBO Max)"
             } else {
                 availabilityError();
