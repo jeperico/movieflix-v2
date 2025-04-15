@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include "errors/availability_error.h"
+#include "errors/validation_error.h"
 
 void main() {
     char title[101];
     int type, raiting, genre, streaming;
-    // [RAITING]    => (1 filme, 2 série, 3 documentário)
-    // [GENRE]      => (0 livre, 10 10+, 18 18+)
+    // [TYPE]       => (1 filme, 2 série, 3 documentário)
+    // [RAITING]    => (0 livre, 10 10+, 18 18+)
+    // [GENRE]      => (1 ação, 2 comédia, 3 drama, 4 suspense)
     // [STREAMING]  => (1 Netflix, 2 Amazon Prime, 3 Disney+, 4 HBO Max)
 
     printf(" +----------------------------------------------------+-------------------+---------+-----------+------------------+\n");
@@ -33,7 +35,7 @@ void main() {
     scanf("%d", &type);
 
     if (!(type == 1 || type == 2 || type == 3)) {
-        printf("[VALIDATION ERROR]\nOps! Valor inválido\n[VALID VALUES] <1, 2, 3>");
+        validationError("1, 2, 3");
         return ;
     }
 
@@ -43,7 +45,7 @@ void main() {
     scanf("%d", &raiting);
 
     if (!(raiting == 0 || raiting == 10 || raiting == 18)) {
-        printf("[VALIDATION ERROR]\nOps! Valor inválido\n[VALID VALUES] <0, 10, 18>");
+        validationError("0, 10, 18");
         return ;
     }
 
@@ -53,7 +55,7 @@ void main() {
     scanf("%d", &genre);
 
     if (!(genre == 1 || genre == 2 || genre == 3 || genre == 4)) {
-        printf("[VALIDATION ERROR]\nOps! Valor inválido\n[VALID VALUES] <1, 2, 3, 4>");
+        validationError("1, 2, 3, 4");
         return ;
     }
 
@@ -63,7 +65,7 @@ void main() {
     scanf("%d", &streaming);
 
     if (!(streaming == 1 || streaming == 2 || streaming == 3 || streaming == 4)) {
-        printf("[VALIDATION ERROR]\nOps! Valor inválido\n[VALID VALUES] <1, 2, 3, 4>");
+        validationError("1, 2, 3, 4");
         return ;
     }
 
