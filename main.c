@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "errors/availability_error.h"
-#include "errors/validation_error.h"
 #include "utils/render_table.h"
 
 void main() {
