@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "errors/availability_error.h"
 #include "errors/validation_error.h"
+#include "utils/render_table.h"
 
 void main() {
     char title[101];
@@ -10,64 +11,12 @@ void main() {
     // [GENRE]      => (1 ação, 2 comédia, 3 drama, 4 suspense)
     // [PROVIDER]  => (1 Netflix, 2 Amazon Prime, 3 Disney+, 4 HBO Max)
 
-    printf(" +----------------------------------------------------+-------------------+---------+-----------+------------------+\n");
-    printf("<| Título                                             | Tipo              | Censura | Categoria | Fornecedor       |>\n");
-    printf(" +----------------------------------------------------+-------------------+---------+-----------+------------------+\n");
-    printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "Vingadores: Ultimato", "1", "18", "1", "1 (Netflix)");
-    printf("<| %-51s | %-17s | %-7s | %-9s | %-16s |>\n", "O Rei Leão", "1", "0", "1", "3 (Disney+)");
-    printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "Breaking Bad", "2", "18", "2", "1 (Netflix)");
-    printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "Friends", "2", "10", "2", "2 (Amazon Prime)");
-    printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "Stranger Things", "2", "10", "1", "1 (Netflix)");
-    printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "Titanic", "1", "10", "3", "2 (Amazon Prime)");
-    printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "Chernobyl", "2", "18", "4", "4 (HBO Max)");
-    printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "La Casa de Papel", "2", "18", "1", "1 (Netflix)");
-    printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "O Menino que Descobriu o Vento", "1", "0", "3", "3 (Disney+)");
-    printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "Dark", "2", "18", "1", "1 (Netflix)");
-    printf(" +----------------------------------------------------+-------------------+---------+-----------+------------------+\n\n\n");
+    renderMoviesTable();
 
-
-    printf("  ## Bem-vindo a escolha de Filmes e Séries!\n");
-
-
-    printf(" +-----------------------------------------------------------------------+\n");
-    printf("<| Tipo de título (1 - Filme, 2 - Série, 3 - Documentário):              |>\n");
-    printf(" +-----------------------------------------------------------------------+\n");
-    scanf("%d", &type);
-
-    if (!(type == 1 || type == 2 || type == 3)) {
-        validationError("1, 2, 3");
-        return ;
-    }
-
-    printf(" +-----------------------------------------------------------------------+\n");
-    printf("<| Censura (0 - Livre, 10 - 10 anos ou mais, 18 - 18 anos ou mais):      |>\n");
-    printf(" +-----------------------------------------------------------------------+\n");
-    scanf("%d", &raiting);
-
-    if (!(raiting == 0 || raiting == 10 || raiting == 18)) {
-        validationError("0, 10, 18");
-        return ;
-    }
-
-    printf(" +-----------------------------------------------------------------------+\n");
-    printf("<| Categoria (1 - Ação, 2 - Comédia, 3 - Drama, 4 - Suspense):           |>\n");
-    printf(" +-----------------------------------------------------------------------+\n");
-    scanf("%d", &genre);
-
-    if (!(genre == 1 || genre == 2 || genre == 3 || genre == 4)) {
-        validationError("1, 2, 3, 4");
-        return ;
-    }
-
-    printf(" +-----------------------------------------------------------------------+\n");
-    printf("<| Fornecedor (1 - Netflix, 2 - Amazon Prime, 3 - Disney+, 4 - HBO Max): |>\n");
-    printf(" +-----------------------------------------------------------------------+\n");
-    scanf("%d", &provider);
-
-    if (!(provider == 1 || provider == 2 || provider == 3 || provider == 4)) {
-        validationError("1, 2, 3, 4");
-        return ;
-    }
+    type = renderType();
+    raiting = renderRating();
+    genre = renderGenre();
+    provider = renderProvider();
 
     
     if(type == 1) {
