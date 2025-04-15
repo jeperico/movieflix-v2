@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "errors/availability_error.h"
 
 void main() {
     char title[101];
@@ -136,8 +137,4 @@ void main() {
     } else {
         availabilityError();
     }
-}
-
-void availabilityError() {
-    printf("[AVAILABILITY ERROR]\nOps! Nenhuma opção disponível\n[NEXT CATALOG] 20/02/2002 - 20:02:20");
 }
