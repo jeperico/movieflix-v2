@@ -49,12 +49,12 @@ void renderResponse(int type, int raiting, int genre, int provider) {
             if (provider == 1) {
                 if (raiting == 18) {
                     // "Stranger Things", "2", "10", "1", "1 (Netflix)"
-                    // "La Casa de Papel", "2", "18", "1", "1 (Netflix)"
-                    // "Dark", "2", "18", "1", "1 (Netflix)"
                     renderResponseTable("Série", 10, "Ação", "Netflix", "Stranger Things");
+                    // "La Casa de Papel", "2", "18", "1", "1 (Netflix)"
                     renderResponseTable("Série", 18, "Ação", "Netflix", "La Casa de Papel");
+                    // "Dark", "2", "18", "1", "1 (Netflix)"
                     renderResponseTable("Série", 18, "Ação", "Netflix", "Dark");
-                    } else if (raiting == 10) {
+                } else if (raiting == 10) {
                     // "Stranger Things", "2", "10", "1", "1 (Netflix)"
                     renderResponseTable("Série", 10, "Ação", "Netflix", "Stranger Things");
                 } else {
