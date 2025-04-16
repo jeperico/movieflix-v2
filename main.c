@@ -12,10 +12,14 @@ void main() {
 
     renderMoviesTable();
 
+    printf(" ## Bem-vindo a escolha de Filmes e Séries!\n\n");
+
     type = renderType();
     raiting = renderRating();
     genre = renderGenre();
     provider = renderProvider();
+
+    renderLoading();
 
     renderResponse(type, raiting, genre, provider);
 }
