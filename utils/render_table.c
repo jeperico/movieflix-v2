@@ -21,7 +21,7 @@ void renderMoviesTable(void) {
 }
 
 int renderType(bool again) {
-    int type;
+    int type = 0;
 
     if (again) validationError("1, 2, 3");
 
