@@ -3,11 +3,11 @@
 
 void renderResponseTable(char *type, int raiting, char *genre, char *provider, char *title) {
   printf(" +-----------------------------------------------------------------------+\n");
-  printf("<| Título: %-60s |>\n", title);
-  printf("<| Tipo: %-62s |>\n", type);
-  printf("<| Classificação: %-53d |>\n", raiting);
-  printf("<| Gênero: %-58s |>\n", genre);
-  printf("<| Fornecedor: %-54s |>\n", provider);
+  printf("<| Título: %-61s |>\n", title);
+  printf("<| Tipo: %-64s |>\n", type);
+  printf("<| Classificação: %-54d |>\n", raiting);
+  printf("<| Gênero: %-63s |>\n", genre);
+  printf("<| Fornecedor: %-57s |>\n", provider);
   printf(" +-----------------------------------------------------------------------+\n\n\n");
 }
 
