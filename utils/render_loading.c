@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+#include <unistd.h>
 
 void renderLoading() {
   printf("\033[H\033[J");
@@ -19,8 +20,4 @@ void renderLoading() {
   printf("\n");
 
   printf("\033[H\033[J");
-}
-
-void main () {
-  renderLoading();
 }
