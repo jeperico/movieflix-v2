@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "render_table.h"
-#include "../errors/validation_error.h"
+#include "rndr.h"
+#include "../errors/err.h"
 
 void renderMoviesTable(void) {
     printf("\n\n +----------------------------------------------------+-------------------+---------+-----------+------------------+\n");

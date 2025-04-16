@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "errors/availability_error.h"
+#include "errors/err.h"
 #include "utils/rndr.h"
 
 void main() {

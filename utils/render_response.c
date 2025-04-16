@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../errors/availability_error.h"
+#include "../errors/err.h"
 
 void renderResponseTable(char *type, int raiting, char *genre, char *provider, char *title) {
     printf(" +-----------------------------------------------------------------------+\n");

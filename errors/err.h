@@ -1,6 +1,7 @@
-#ifndef VALIDATION_ERROR_H
-#define VALIDATION_ERROR_H
+#ifndef ERR_H
+#define ERR_H
 
 void validationError(const char *expecterValues);
+void availabilityError(void);
 
 #endif
