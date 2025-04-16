@@ -2,9 +2,9 @@
 #define RENDER_TABLE_H
 
 void renderMoviesTable(void);
-int renderType(void);
-int renderRating(void);
-int renderGenre(void);
-int renderProvider(void);
+int renderType(bool again);
+int renderRating(bool again);
+int renderGenre(bool again);
+int renderProvider(bool again);
 
 #endif

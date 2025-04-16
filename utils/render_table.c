@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "render_table.h"
 #include "../errors/validation_error.h"
 
@@ -19,25 +20,27 @@ void renderMoviesTable(void) {
     printf(" +----------------------------------------------------+-------------------+---------+-----------+------------------+\n\n\n");
 }
 
-int renderType(void) {
+int renderType(bool again) {
     int type;
+
+    if (again) validationError("1, 2, 3");
 
     printf(" +-----------------------------------------------------------------------+\n");
     printf("<| Tipo de título (1 - Filme, 2 - Série, 3 - Documentário):              |>\n");
     printf(" +-----------------------------------------------------------------------+\n");
     scanf("%d", &type);
 
-    if (!(type == 1 || type == 2 || type == 3)) {
-        validationError("1, 2, 3");
-        renderType();
-    }
+    if (!(type == 1 || type == 2 || type == 3)) renderType(true);
+
 
     return type;
 }
 
-int renderRating(void) {
+int renderRating(bool again) {
     printf("\033[H\033[J");
     renderMoviesTable();
+
+    if (again) validationError("0, 10, 18");
 
     int raiting;
 
@@ -46,17 +49,16 @@ int renderRating(void) {
     printf(" +-----------------------------------------------------------------------+\n");
     scanf("%d", &raiting);
 
-    if (!(raiting == 0 || raiting == 10 || raiting == 18)) {
-        validationError("0, 10, 18");
-        renderRating();
-    }
+    if (!(raiting == 0 || raiting == 10 || raiting == 18)) renderRating(true);
 
     return raiting;
 }
 
-int renderGenre(void) {
+int renderGenre(bool again) {
     printf("\033[H\033[J");
     renderMoviesTable();
+
+    if (again) validationError("1, 2, 3, 4");
 
     int genre;
 
@@ -65,17 +67,16 @@ int renderGenre(void) {
     printf(" +-----------------------------------------------------------------------+\n");
     scanf("%d", &genre);
 
-    if (!(genre == 1 || genre == 2 || genre == 3 || genre == 4)) {
-        validationError("1, 2, 3, 4");
-        renderGenre();
-    }
+    if (!(genre == 1 || genre == 2 || genre == 3 || genre == 4)) renderGenre(true);
 
     return genre;
 }
 
-int renderProvider(void) {
+int renderProvider(bool again) {
     printf("\033[H\033[J");
     renderMoviesTable();
+
+    if (again) validationError("1, 2, 3, 4");
 
     int provider;
 
@@ -84,10 +85,7 @@ int renderProvider(void) {
     printf(" +-----------------------------------------------------------------------+\n");
     scanf("%d", &provider);
 
-    if (!(provider == 1 || provider == 2 || provider == 3 || provider == 4)) {
-        validationError("1, 2, 3, 4");
-        renderProvider();
-    }
+    if (!(provider == 1 || provider == 2 || provider == 3 || provider == 4)) renderProvider(true);
 
     return provider;
 }

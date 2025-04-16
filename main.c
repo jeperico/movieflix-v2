@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "errors/availability_error.h"
 #include "utils/render_table.h"
 #include "utils/render_response.h"
@@ -15,10 +16,10 @@ void main() {
 
     printf(" ## Bem-vindo a escolha de Filmes e Séries!\n\n");
 
-    type = renderType();
-    raiting = renderRating();
-    genre = renderGenre();
-    provider = renderProvider();
+    type = renderType(false);
+    raiting = renderRating(false);
+    genre = renderGenre(false);
+    provider = renderProvider(false);
 
     renderLoading();
 
