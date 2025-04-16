@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "errors/availability_error.h"
 #include "utils/render_table.h"
+#include "utils/render_response.h"
 
 void main() {
     int type, raiting, genre, provider;
@@ -16,74 +17,5 @@ void main() {
     genre = renderGenre();
     provider = renderProvider();
 
-    
-    if(type == 1) {
-        if (genre == 1) {
-            if (provider == 1) {
-                if (raiting == 18) {
-                    // "Vingadores: Ultimato", "1", "18", "1", "1 (Netflix)"
-                } else {
-                    availabilityError();
-                }
-            } else if (provider == 3) {
-                // "O Rei Leão", "1", "0", "1", "3 (Disney+)"
-            } else {
-                availabilityError();
-            }
-        } else if (genre == 3) {
-            if (provider == 2) {
-                if (raiting == 10 || raiting == 18) {
-                    // "Titanic", "1", "10", "3", "2 (Amazon Prime)"
-                } else {
-                    availabilityError();
-                }
-            } else if (provider == 3) {
-                // "O Menino que Descobriu o Vento", "1", "0", "3", "3 (Disney+)"
-            } else {
-                availabilityError();
-            }
-        } else {
-            availabilityError();
-        }
-    } else if (type == 2) {
-        if (genre == 1) {
-            if (provider == 1) {
-                if (raiting == 18) {
-                    // "Stranger Things", "2", "10", "1", "1 (Netflix)"
-                    // "La Casa de Papel", "2", "18", "1", "1 (Netflix)"
-                    // "Dark", "2", "18", "1", "1 (Netflix)"
-                } else if (raiting == 10) {
-                    // "Stranger Things", "2", "10", "1", "1 (Netflix)"
-                } else {
-                    availabilityError();
-                }
-            } else {
-                availabilityError();
-            }
-        } else if (genre == 2) {
-            if (provider == 1) {
-                if (raiting == 18) {
-                    // "Breaking Bad", "2", "18", "2", "1 (Netflix)"
-                } else {
-                    availabilityError();
-                }
-            } else if (provider == 2) {
-                if (raiting == 10 || raiting == 18) {
-                    // "Friends", "2", "10", "2", "2 (Amazon Prime)"
-                } else {
-                    availabilityError();
-                }
-            }
-        } else if (genre == 4) {
-            if(provider == 4 && raiting == 18) {
-                // "Chernobyl", "2", "18", "4", "4 (HBO Max)"
-            } else {
-                availabilityError();
-            }
-        } else {
-            availabilityError();
-        }
-    } else {
-        availabilityError();
-    }
+    renderResponse(type, raiting, genre, provider);
 }

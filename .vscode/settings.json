@@ -1,6 +1,17 @@
 {
     "files.associations": {
+        "*.json.liquid": "json",
+        "*.yaml.liquid": "yaml",
+        "*.md.liquid": "markdown",
+        "*.js.liquid": "liquid-javascript",
+        "*.css.liquid": "liquid-css",
+        "*.scss.liquid": "liquid-scss",
+        ".env.*": "dotenv",
+        ".prettierrc": "json",
+        "*.css": "css",
         "stdio.h": "c",
-        "render_table.h": "c"
+        "render_table.h": "c",
+        "validation_error.h": "c",
+        "availability_error.h": "c"
     }
 }

@@ -18,7 +18,7 @@ void renderMoviesTable(void) {
     printf("<| %-50s | %-17s | %-7s | %-9s | %-16s |>\n", "Dark", "2", "18", "1", "1 (Netflix)");
     printf(" +----------------------------------------------------+-------------------+---------+-----------+------------------+\n\n\n");
 
-    printf("  ## Bem-vindo a escolha de Filmes e Séries!\n");
+    printf(" ## Bem-vindo a escolha de Filmes e Séries!\n\n");
 }
 
 int renderType(void) {
