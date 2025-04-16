@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "errors/availability_error.h"
-#include "utils/render_table.h"
-#include "utils/render_response.h"
-#include "utils/render_loading.h"
+#include "utils/rndr.h"
 
 void main() {
     int type, raiting, genre, provider;
