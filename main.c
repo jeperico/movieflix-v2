@@ -2,6 +2,7 @@
 #include "errors/availability_error.h"
 #include "utils/render_table.h"
 #include "utils/render_response.h"
+#include "utils/render_loading.h"
 
 void main() {
     int type, raiting, genre, provider;
