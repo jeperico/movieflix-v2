@@ -21,7 +21,7 @@ void renderMoviesTable(void) {
 }
 
 int renderType(bool again) {
-    int type = 0;
+    int type;
 
     if (again) validationError("1, 2, 3");
 
@@ -31,7 +31,6 @@ int renderType(bool again) {
     scanf("%d", &type);
 
     if (!(type == 1 || type == 2 || type == 3)) renderType(true);
-
 
     return type;
 }
