@@ -41,16 +41,16 @@ int renderRating(bool again) {
 
     if (again) validationError("0, 10, 18");
 
-    int raiting;
+    int rating;
 
     printf("\n\n +-----------------------------------------------------------------------+\n");
     printf("<| Censura (0 - Livre, 10 - 10 anos ou mais, 18 - 18 anos ou mais):      |>\n");
     printf(" +-----------------------------------------------------------------------+\n");
-    scanf("%d", &raiting);
+    scanf("%d", &rating);
 
-    if (!(raiting == 0 || raiting == 10 || raiting == 18)) renderRating(true);
+    if (!(rating == 0 || rating == 10 || rating == 18)) renderRating(true);
 
-    return raiting;
+    return rating;
 }
 
 int renderGenre(bool again) {

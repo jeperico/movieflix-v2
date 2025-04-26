@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include "../errors/err.h"
 
-void renderResponseTable(char *type, int raiting, char *genre, char *provider, char *title) {
+void renderResponseTable(char *type, int rating, char *genre, char *provider, char *title) {
     printf(" +-----------------------------------------------------------------------+\n");
     printf("<| Título: %-61s |>\n", title);
     printf("<| Tipo: %-63s |>\n", type);
-    printf("<| Classificação: %-54d |>\n", raiting);
+    printf("<| Classificação: %-54d |>\n", rating);
     printf("<| Gênero: %-63s |>\n", genre);
     printf("<| Fornecedor: %-57s |>\n", provider);
     printf(" +-----------------------------------------------------------------------+\n\n\n");
 }
 
-void renderResponse(int type, int raiting, int genre, int provider) {
+void renderResponse(int type, int rating, int genre, int provider) {
     if(type == 1) {
         if (genre == 1) {
             if (provider == 1) {
-                if (raiting == 18) {
+                if (rating == 18) {
                   // "Vingadores: Ultimato", "1", "18", "1", "1 (Netflix)"
                     renderResponseTable("Filme", 18, "Ação", "Netflix", "Vingadores: Ultimato");
                 } else {
@@ -29,7 +29,7 @@ void renderResponse(int type, int raiting, int genre, int provider) {
             }
         } else if (genre == 3) {
             if (provider == 2) {
-                if (raiting == 10 || raiting == 18) {
+                if (rating == 10 || rating == 18) {
                     // "Titanic", "1", "10", "3", "2 (Amazon Prime)"
                     renderResponseTable("Filme", 10, "Drama", "Amazon Prime", "Titanic");
                 } else {
@@ -47,14 +47,14 @@ void renderResponse(int type, int raiting, int genre, int provider) {
     } else if (type == 2) {
         if (genre == 1) {
             if (provider == 1) {
-                if (raiting == 18) {
+                if (rating == 18) {
                     // "Stranger Things", "2", "10", "1", "1 (Netflix)"
                     renderResponseTable("Serie", 10, "Ação", "Netflix", "Stranger Things");
                     // "La Casa de Papel", "2", "18", "1", "1 (Netflix)"
                     renderResponseTable("Serie", 18, "Ação", "Netflix", "La Casa de Papel");
                     // "Dark", "2", "18", "1", "1 (Netflix)"
                     renderResponseTable("Serie", 18, "Ação", "Netflix", "Dark");
-                } else if (raiting == 10) {
+                } else if (rating == 10) {
                     // "Stranger Things", "2", "10", "1", "1 (Netflix)"
                     renderResponseTable("Serie", 10, "Ação", "Netflix", "Stranger Things");
                 } else {
@@ -65,14 +65,14 @@ void renderResponse(int type, int raiting, int genre, int provider) {
             }
         } else if (genre == 2) {
             if (provider == 1) {
-                if (raiting == 18) {
+                if (rating == 18) {
                     // "Breaking Bad", "2", "18", "2", "1 (Netflix)"
                     renderResponseTable("Serie", 18, "Comédia", "Netflix", "Breaking Bad");
                 } else {
                     availabilityError();
                 }
             } else if (provider == 2) {
-                if (raiting == 10 || raiting == 18) {
+                if (rating == 10 || rating == 18) {
                     // "Friends", "2", "10", "2", "2 (Amazon Prime)"
                     renderResponseTable("Serie", 10, "Comédia", "Amazon Prime", "Friends");
                 } else {
@@ -80,7 +80,7 @@ void renderResponse(int type, int raiting, int genre, int provider) {
                 }
             }
         } else if (genre == 4) {
-            if(provider == 4 && raiting == 18) {
+            if(provider == 4 && rating == 18) {
                 // "Chernobyl", "2", "18", "4", "4 (HBO Max)"
                 renderResponseTable("Serie", 18, "Suspense", "HBO Max", "Chernobyl");
             } else {
